@@ -15,7 +15,7 @@ Please check out one of the getting started guides about GitHub fork / pull requ
 
 Your fork of the repository can fall behind as more work is done in the original repository.
 It is always good idea to update your work before starting to work on new issue.
-The fork can be updated by navigating to your for directory and running the following command...
+The fork can be updated by navigating to your fork directory and running the following command...
 `git checkout master --force && git fetch upstream && git merge upstream/master && git push`
 
 This command assumes you're using unix or unix like environment (macOS, cygwin, WSL, ...).
