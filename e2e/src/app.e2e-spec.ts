@@ -1,6 +1,8 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
+import { getCurrentRouteUrl } from './utils';
+
 describe('workspace-project App', () => {
   let page: AppPage;
 
@@ -8,16 +10,21 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  // TODO: Need to fix once about page is created
+  // it('should redirect to "about" route', () => {
+  //   page.navigateTo();
+  //   expect(getCurrentRouteUrl()).toEqual('about');
+  // });
+
+  it('should display current year in the footer', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to sing-bus!');
+    expect(page.getCurrentYear()).toEqual(new Date().getFullYear().toString());
   });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    }));
+  it('should have "About", "Features", "Examples" menus', () => {
+    page.navigateTo();
+    page
+      .getAllMenus()
+      .then(menus => expect(menus).toEqual(['About', 'Features', 'Examples']));
   });
 });

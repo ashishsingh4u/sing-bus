@@ -5,7 +5,13 @@ export class AppPage {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
 
-  getTitleText() {
-    return element(by.css('sb-root h1')).getText() as Promise<string>;
+  getCurrentYear() {
+    return element(by.css('.signature .year')).getText();
+  }
+
+  getAllMenus() {
+    return element
+      .all(by.css('mat-toolbar button.nav-button'))
+      .map(elm => elm.getText());
   }
 }
