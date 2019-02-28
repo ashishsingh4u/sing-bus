@@ -21,10 +21,10 @@ describe('workspace-project App', () => {
     expect(page.getCurrentYear()).toEqual(new Date().getFullYear().toString());
   });
 
-  it('should have "About", "Features", "Examples" menus', () => {
+  it('should have "About", "Stops", "Arrivals" menus', () => {
     page.navigateTo();
     page
       .getAllMenus()
-      .then(menus => expect(menus).toEqual(['About', 'Features', 'Examples']));
+      .then(menus => expect(menus).toEqual(['About', 'Stops', 'Arrivals']));
   });
 });
