@@ -27,8 +27,8 @@ export class AppComponent {
 
   navigation = [
     { link: 'about', label: 'About' },
-    { link: 'features', label: 'Features' },
-    { link: 'examples', label: 'Examples' }
+    { link: 'stops', label: 'Stops' },
+    { link: 'arrivals', label: 'Arrivals' }
   ];
   navigationSideMenu = [
     ...this.navigation,
