@@ -18,11 +18,11 @@
 
     <div class="wrapper">
 
-      <div class="toolbar" [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="(stickyHeader$ | async)">
+      <div class="toolbar" [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
+        [class.mat-elevation-z4]="(stickyHeader$ | async)">
         <mat-toolbar color="primary">
           <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
             <fa-icon icon="bars"></fa-icon>
-
           </button>
 
           <span routerLink="" class="branding spacer center d-inline d-sm-none">
@@ -39,18 +39,19 @@
             </button>
           </span>
 
-          <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
+          <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)"
+            (click)="onLoginClick()">
             {{ menuLogin }}
           </button>
 
-          <button *ngIf="(isAuthenticated$ | async)"
-                  mat-icon-button
-                  [matMenuTriggerFor]="toolbarUserMenu">
+          <button *ngIf="(isAuthenticated$ | async)" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
             <fa-icon icon="user-circle"></fa-icon>
           </button>
           <mat-menu #toolbarUserMenu="matMenu">
             <button mat-menu-item (click)="onLogoutClick()">
-              <mat-icon><fa-icon icon="power-off"></fa-icon></mat-icon>
+              <mat-icon>
+                <fa-icon icon="power-off"></fa-icon>
+              </mat-icon>
               <span>{{ menuLogout }}</span>
             </button>
           </mat-menu>
@@ -59,12 +60,8 @@
             <fa-icon icon="cog"></fa-icon>
           </button>
 
-          <a [matTooltip]="'header.github'"
-             matTooltipPosition="before"
-             mat-icon-button
-             class="link d-none d-sm-inline"
-             href="https://github.com/ashishsingh4u/sing-bus"
-             target="_blank">
+          <a matTooltip="Project Github Repository" matTooltipPosition="before" mat-icon-button
+            class="link d-none d-sm-inline" href="https://github.com/ashishsingh4u/sing-bus" target="_blank">
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
 
@@ -96,8 +93,7 @@
               <fa-icon [icon]="['fab','twitter']"></fa-icon>
               <span>Twitter</span>
             </a>
-            <a href="https://www.youtube.com/channel/UCEJuj9MW9OmLjLD4dNqUvYA"
-               target="_blank">
+            <a href="https://www.youtube.com/channel/UCEJuj9MW9OmLjLD4dNqUvYA" target="_blank">
               <fa-icon [icon]="['fab','youtube']"></fa-icon>
               <span>Youtube</span>
             </a>
@@ -115,9 +111,8 @@
           <div class="col-12 signature">
             &#169; <span class="year" data-testid="footer-year">{{year}}</span> - Techie Notes
             <br class="d-block d-sm-none">
-            <a [matTooltip]="'footer.changelog'"
-               matTooltipPosition="before"
-               href="https://github.com/ashishsingh4u/sing-bus/blob/master/CHANGELOG.md">
+            <a matTooltip="Show changelog" matTooltipPosition="before"
+              href="https://github.com/ashishsingh4u/sing-bus/blob/master/CHANGELOG.md">
               <fa-icon icon="rocket"></fa-icon>
               {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
             </a>

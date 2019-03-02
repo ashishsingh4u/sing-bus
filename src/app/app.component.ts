@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import browser from 'browser-detect';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { environment as env } from '@env/environment';
 import {
@@ -13,7 +13,7 @@ import {
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Sing-Bus';
   titleLong = 'Singapore Bus';
   menuLogin = 'Sign in';
@@ -40,8 +40,18 @@ export class AppComponent {
   language$: Observable<string>;
   theme$: Observable<string>;
 
+  constructor(
+  ) {}
+
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
+  }
+
+  ngOnInit(): void {
+    this.isAuthenticated$ = of(false);
+    this.stickyHeader$ = of(false);
+    this.language$ = of('en');
+    this.theme$ = of('Dark');
   }
 
   onLoginClick() {
