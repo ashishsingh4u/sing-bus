@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.2](https://github.com/ashishsingh4u/sing-bus/compare/v0.0.1...v0.0.2) (2019-03-02)
+
+
+### Bug Fixes
+
+* **tooltip:** Fixed material tooltip text ([9ff295b](https://github.com/ashishsingh4u/sing-bus/commit/9ff295b)), closes [#7](https://github.com/ashishsingh4u/sing-bus/issues/7)
+
+
+
 ## [0.0.1](https://github.com/ashishsingh4u/sing-bus/compare/v0.0.0...v0.0.1) (2019-02-28)
 
 
