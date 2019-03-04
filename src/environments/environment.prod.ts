@@ -5,6 +5,7 @@ export const environment = {
   appName: 'Sing-Bus',
   envName: 'PROD',
   test: false,
+  i18nPrefix: '/sing-bus',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],

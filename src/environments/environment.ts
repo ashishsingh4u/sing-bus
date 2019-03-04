@@ -9,6 +9,7 @@ export const environment = {
   appName: 'Sing-Bus',
   envName: 'DEV',
   test: false,
+  i18nPrefix: '',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
