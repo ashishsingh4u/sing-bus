@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.1](https://github.com/ashishsingh4u/sing-bus/compare/v0.1.0...v0.1.1) (2019-03-04)
+
+
+### Bug Fixes
+
+* **language:** hidden caption and title issue fixed ([479487d](https://github.com/ashishsingh4u/sing-bus/commit/479487d)), closes [#11](https://github.com/ashishsingh4u/sing-bus/issues/11)
+
+
+
 # [0.1.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.0.2...v0.1.0) (2019-03-04)
 
 
