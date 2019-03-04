@@ -32,6 +32,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { environment } from '@env/environment';
 
 import { CoreModule } from '@app/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -143,5 +144,7 @@ library.add(
 })
 export class AppModule {}
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http,
+    `${environment.i18nPrefix}/assets/i18n/`,
+    '.json');
 }
