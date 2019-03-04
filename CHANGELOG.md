@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.1.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.0.2...v0.1.0) (2019-03-04)
+
+
+### Features
+
+* **language:** Language support added ([22ab5a9](https://github.com/ashishsingh4u/sing-bus/commit/22ab5a9)), closes [#9](https://github.com/ashishsingh4u/sing-bus/issues/9)
+
+
+
 ## [0.0.2](https://github.com/ashishsingh4u/sing-bus/compare/v0.0.1...v0.0.2) (2019-03-02)
 
 
