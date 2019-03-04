@@ -4,11 +4,11 @@
 
     <mat-sidenav #sidenav mode="push">
       <div class="branding"><img [src]="logo" />
-        <span data-testid="title">{{ title }}</span></div>
+        <span data-testid="title">{{ 'sb.title.short' | translate }}</span></div>
       <mat-nav-list>
         <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()" [routerLink]="[item.link]"
           routerLinkActive="active">
-          {{item.label}}
+          {{ item.label | translate }}
         </a>
         <a mat-list-item href="https://github.com/ashishsingh4u/sing-bus" target="_blank">
           Github
@@ -28,20 +28,20 @@
           <span routerLink="" class="branding spacer center d-inline d-sm-none">
             <img [src]="logo" /></span>
           <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none"><img [src]="logo" /> {{
-            title }}</span>
-          <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo" /> {{ titleLong
+            'sb.title.short' | translate }}</span>
+          <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo" /> {{ 'sb.title.long' | translate
             }}</span>
 
           <span class="d-none d-md-inline">
             <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]"
               routerLinkActive="active">
-              {{item.label}}
+              {{ item.label | translate }}
             </button>
           </span>
 
           <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)"
             (click)="onLoginClick()">
-            {{ menuLogin }}
+            {{ 'sb.menu.login' | translate }}
           </button>
 
           <button *ngIf="(isAuthenticated$ | async)" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
@@ -52,7 +52,7 @@
               <mat-icon>
                 <fa-icon icon="power-off"></fa-icon>
               </mat-icon>
-              <span>{{ menuLogout }}</span>
+              <span>{{ 'sb.menu.logout' | translate }}</span>
             </button>
           </mat-menu>
 

@@ -23,6 +23,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { CoreModule } from '@app/core';
 
 describe('AppComponent', () => {
@@ -50,13 +54,25 @@ describe('AppComponent', () => {
         MatSlideToggleModule,
         MatDividerModule,
         FontAwesomeModule,
-        CoreModule
+        CoreModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+          }
+        })
       ],
       declarations: [
         AppComponent
       ],
     }).compileComponents();
   }));
+
+  function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+  }
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
