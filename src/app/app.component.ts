@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import browser from 'browser-detect';
 import { Observable, of } from 'rxjs';
 
+import { TranslateService } from '@ngx-translate/core';
+
 import { environment as env } from '@env/environment';
-import {
-  routeAnimations
-} from '@app/core';
+import { routeAnimations } from '@app/core';
 
 @Component({
   selector: 'sb-root',
@@ -23,16 +23,16 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../assets/logo.png');
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  languages = ['en', 'fr', 'hi-in'];
 
   navigation = [
-    { link: 'about', label: 'About' },
-    { link: 'stops', label: 'Stops' },
-    { link: 'arrivals', label: 'Arrivals' }
+    { link: 'about', label: 'sb.menu.about' },
+    { link: 'stops', label: 'sb.menu.stops' },
+    { link: 'arrivals', label: 'sb.menu.arrivals' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'Settings' }
+    { link: 'settings', label: 'sb.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;
@@ -40,8 +40,9 @@ export class AppComponent implements OnInit {
   language$: Observable<string>;
   theme$: Observable<string>;
 
-  constructor(
-  ) {}
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+  }
 
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
@@ -54,15 +55,11 @@ export class AppComponent implements OnInit {
     this.theme$ = of('Dark');
   }
 
-  onLoginClick() {
+  onLoginClick() {}
 
-  }
-
-  onLogoutClick() {
-
-  }
+  onLogoutClick() {}
 
   onLanguageSelect({ value: language }) {
-
+    this.translate.use(language);
   }
 }
