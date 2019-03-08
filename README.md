@@ -1,7 +1,14 @@
 # Sing-Bus
 
 [![GitHub](https://img.shields.io/github/license/ashishsingh4u/sing-bus.svg)](https://github.com/ashishsingh4u/sing-bus/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/ashishsingh4u/sing-bus.svg?branch=master)](https://travis-ci.org/ashishsingh4u/sing-bus) [![Codecov](https://img.shields.io/codecov/c/github/ashishsingh4u/sing-bus.svg)](https://codecov.io/gh/ashishsingh4u/sing-bus) ![GitHub issues](https://img.shields.io/github/issues/ashishsingh4u/sing-bus.svg) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/ashishsingh4u/sing-bus.svg) ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/tag-pre/ashishsingh4u/sing-bus.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/ashishsingh4u/sing-bus.svg) ![Twitter Follow](https://img.shields.io/twitter/follow/ashishsingh4u.svg?label=Follow&style=social)
+[![Build Status](https://travis-ci.org/ashishsingh4u/sing-bus.svg?branch=master)](https://travis-ci.org/ashishsingh4u/sing-bus) 
+[![Codecov](https://img.shields.io/codecov/c/github/ashishsingh4u/sing-bus.svg)](https://codecov.io/gh/ashishsingh4u/sing-bus)
+[![Dependency Status](https://david-dm.org/ashishsingh4u/sing-bus.svg)](https://david-dm.org/ashishsingh4u/sing-bus)
+![GitHub issues](https://img.shields.io/github/issues/ashishsingh4u/sing-bus.svg)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/ashishsingh4u/sing-bus.svg) 
+![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/tag-pre/ashishsingh4u/sing-bus.svg) 
+![GitHub last commit](https://img.shields.io/github/last-commit/ashishsingh4u/sing-bus.svg) 
+![Twitter Follow](https://img.shields.io/twitter/follow/ashishsingh4u.svg?label=Follow&style=social)
 
 ## Available Bus Arrival Time App
 
