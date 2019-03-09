@@ -35,8 +35,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '@env/environment';
 
 import { CoreModule } from '@app/core';
+import { StaticModule } from './static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StopsComponent} from './stops/stops.component';
+import { ArrivalsComponent } from './arrivals/arrivals.component';
 
 import {
   faBars,
@@ -71,6 +74,8 @@ import {
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 
+
+
 library.add(
   faBars,
   faUserCircle,
@@ -103,7 +108,7 @@ library.add(
 );
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, StopsComponent, ArrivalsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -130,7 +135,9 @@ library.add(
     MatDividerModule,
     FontAwesomeModule,
     CoreModule,
+    StaticModule,
     HttpClientModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
