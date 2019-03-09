@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.2.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.1.1...v0.2.0) (2019-03-09)
+
+
+### Features
+
+* **Build:** Appveyor configuration added ([cc5295c](https://github.com/ashishsingh4u/sing-bus/commit/cc5295c)), closes [#17](https://github.com/ashishsingh4u/sing-bus/issues/17)
+* **Build:** Appveyor configuration added ([ba21865](https://github.com/ashishsingh4u/sing-bus/commit/ba21865)), closes [#17](https://github.com/ashishsingh4u/sing-bus/issues/17)
+
+
+
 ## [0.1.1](https://github.com/ashishsingh4u/sing-bus/compare/v0.1.0...v0.1.1) (2019-03-04)
 
 
