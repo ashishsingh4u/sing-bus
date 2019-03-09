@@ -2,6 +2,7 @@
 
 [![GitHub](https://img.shields.io/github/license/ashishsingh4u/sing-bus.svg)](https://github.com/ashishsingh4u/sing-bus/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/ashishsingh4u/sing-bus.svg?branch=master)](https://travis-ci.org/ashishsingh4u/sing-bus)
+[![Build Status](https://ci.appveyor.com/api/projects/status/uf81pel3k1k75mxy/branch/master?svg=true)](https://ci.appveyor.com/project/AshishSingh/sing-bus/branch/master)
 [![Codecov](https://img.shields.io/codecov/c/github/ashishsingh4u/sing-bus.svg)](https://codecov.io/gh/ashishsingh4u/sing-bus)
 [![Dependency Status](https://david-dm.org/ashishsingh4u/sing-bus.svg)](https://david-dm.org/ashishsingh4u/sing-bus)
 [![GitHub issues](https://img.shields.io/github/issues/ashishsingh4u/sing-bus.svg)](https://github.com/ashishsingh4u/sing-bus/issues)
