@@ -11,7 +11,7 @@
     "clean": "rimraf ./dist/",
     "test-build": "ng test --watch=false --code-coverage",
     "build:prod": "ng build --prod --vendor-chunk",
-    "ci": "npm run clean && ng test --watch=false --code-coverage && ng e2e && npm run build:prod -- --deploy-url /sing-bus/ --base-href /sing-bus",
+    "ci": "npm run clean && ng lint && ng test --watch=false --code-coverage && ng e2e && npm run build:prod -- --deploy-url /sing-bus/ --base-href /sing-bus",
     "release": "standard-version && git push --follow-tags origin master"
   },
   "private": true,
