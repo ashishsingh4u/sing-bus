@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.5.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.4.0...v0.5.0) (2019-03-11)
+
+
+### Features
+
+* **Modules:** Library imports and exports moved ([#22](https://github.com/ashishsingh4u/sing-bus/issues/22)) ([d6d6114](https://github.com/ashishsingh4u/sing-bus/commit/d6d6114)), closes [#21](https://github.com/ashishsingh4u/sing-bus/issues/21)
+
+
+
 # [0.4.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.3.0...v0.4.0) (2019-03-11)
 
 
