@@ -13,17 +13,17 @@ const routes: Routes = [
   {
     path: 'stops',
     component: StopsComponent,
-    data: { title: 'anms.menu.stops' }
+    data: { title: 'sb.menu.stops' }
   },
   {
     path: 'arrivals',
     component: ArrivalsComponent,
-    data: { title: 'anms.menu.arrivals' }
+    data: { title: 'sb.menu.arrivals' }
   },
   {
     path: 'settings',
     component: SettingsComponent,
-    data: { title: 'anms.menu.settings' }
+    data: { title: 'sb.menu.settings' }
   },
   {
     path: '**',
