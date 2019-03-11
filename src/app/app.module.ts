@@ -10,6 +10,7 @@ import { environment } from '@env/environment';
 
 import { SharedModule } from '@app/shared';
 import { CoreModule } from '@app/core';
+import { SettingsModule } from '@app/settings';
 import { StaticModule } from './static';
 import { AppComponent } from './app.component';
 import { StopsComponent } from './stops/stops.component';
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     CoreModule,
     StaticModule,
+    SettingsModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
