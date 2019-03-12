@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.1](https://github.com/ashishsingh4u/sing-bus/compare/v0.5.0...v0.5.1) (2019-03-12)
+
+
+### Bug Fixes
+
+* **theme:** Menu button highlight for the active page ([#27](https://github.com/ashishsingh4u/sing-bus/issues/27)) ([e251621](https://github.com/ashishsingh4u/sing-bus/commit/e251621)), closes [#25](https://github.com/ashishsingh4u/sing-bus/issues/25) [#20](https://github.com/ashishsingh4u/sing-bus/issues/20) [#24](https://github.com/ashishsingh4u/sing-bus/issues/24)
+
+
+
 # [0.5.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.4.0...v0.5.0) (2019-03-11)
 
 
