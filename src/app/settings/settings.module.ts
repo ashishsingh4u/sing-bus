@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SettingsComponent } from './component/settings.component';
+import { EffectsModule } from '@ngrx/effects';
+
+import { SettingsComponent } from './components/settings.component';
+import { SharedModule } from '@app/shared';
+import { SettingsEffects } from './settings.effects';
 
 @NgModule({
   declarations: [SettingsComponent],
   imports: [
-    CommonModule
+    SharedModule,
+    // EffectsModule.forFeature([SettingsEffects])
   ]
 })
 export class SettingsModule { }

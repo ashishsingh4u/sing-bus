@@ -6,5 +6,22 @@
   "sb.menu.logout": "Logout",
   "sb.menu.settings": "Settings",
   "sb.title.long": "Singapore Bus",
-  "sb.title.short": "Sing-Bus"
+  "sb.title.short": "Sing-Bus",
+  "sb.settings.general.title": "General",
+  "sb.settings.themes.blue": "Blue",
+  "sb.settings.themes.dark": "Dark",
+  "sb.settings.themes.light": "Light",
+  "sb.settings.themes.nature": "Nature",
+  "sb.settings.themes.night-mode": "Auto night mode (from 21:00 to 7:00)",
+  "sb.settings.general.language.en": "English",
+  "sb.settings.general.language.fr": "French",
+  "sb.settings.general.language.hi-in": "Hindi",
+  "sb.settings.general.placeholder": "Language",
+  "sb.settings.themes.sticky-header": "Sticky header",
+  "sb.settings.themes.title": "Themes",
+  "sb.settings.themes.placeholder": "Color Theme",
+  "sb.settings.animations.title": "Animations",
+  "sb.settings.animations.page": "Navigation whole page transition",
+  "sb.settings.animations.elements": "Navigation page elements slide up",
+  "sb.settings.title": "Settings"
 }
