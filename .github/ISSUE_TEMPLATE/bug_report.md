@@ -18,16 +18,16 @@ assignees: ''
 
 -->
 
-## Minimal reproduction of the bug with instructions:
+# Minimal reproduction of the bug with instructions :-
 
-## Expected behaviour:
+## Expected behavior :-
 
-## Other information:
+## Other information :-
 
-## I would be willing to submit a PR to fix this issue:
+## I would be willing to submit a PR to fix this issue :-
 
-[ ] Yes (Assistance is provided if you need help submitting a pull request)  
-[ ] No
+- [ ] Yes (Assistance is provided if you need help submitting a pull request)  
+- [ ] No
 
 <!--
 
