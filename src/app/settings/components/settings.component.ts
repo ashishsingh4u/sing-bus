@@ -45,20 +45,9 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {}
 
-  onLanguageSelect({ value: language }) {
-    const test = language;
-  }
+  onLanguageSelect({ value: language }) {}
 
-  onThemeSelect({ value: theme }) {
-    const classList = this.overlayContainer.getContainerElement().classList;
-    const toRemove = Array.from(classList).filter((item: string) =>
-      item.includes('-theme')
-    );
-    if (toRemove.length) {
-      classList.remove(...toRemove);
-    }
-    classList.add('black-theme');
-  }
+  onThemeSelect({ value: theme }) {}
 
   onAutoNightModeToggle({ checked: autoNightMode }) {}
 

@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AnimationsService {
   constructor() {
-    AnimationsService.routeAnimationType = 'ELEMENTS';
+    AnimationsService.routeAnimationType = 'NONE';
   }
 
-  private static routeAnimationType: RouteAnimationType = 'ELEMENTS';
+  private static routeAnimationType: RouteAnimationType = 'NONE';
 
   static isRouteAnimationsType(type: RouteAnimationType) {
     return AnimationsService.routeAnimationType === type;
