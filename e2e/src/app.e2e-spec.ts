@@ -10,11 +10,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  // TODO: Need to fix once about page is created
-  // it('should redirect to "about" route', () => {
-  //   page.navigateTo();
-  //   expect(getCurrentRouteUrl()).toEqual('about');
-  // });
+  it('should redirect to "about" route', () => {
+    page.navigateTo();
+    expect(getCurrentRouteUrl()).toEqual('about');
+  });
 
   it('should display current year in the footer', () => {
     page.navigateTo();
