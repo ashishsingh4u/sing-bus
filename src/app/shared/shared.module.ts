@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -94,6 +95,7 @@ library.add(
   imports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatMenuModule,
@@ -121,6 +123,7 @@ library.add(
   exports: [
     CommonModule,
     FormsModule,
+    TranslateModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatMenuModule,
