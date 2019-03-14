@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.6.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.5.2...v0.6.0) (2019-03-14)
+
+
+### Bug Fixes
+
+* **configuration:** Fixed test config for e2e/test ([a797959](https://github.com/ashishsingh4u/sing-bus/commit/a797959))
+* **test:** test fixed ([045c456](https://github.com/ashishsingh4u/sing-bus/commit/045c456))
+
+
+### Features
+
+* **settings:** Settings screen implemented ([de73ba8](https://github.com/ashishsingh4u/sing-bus/commit/de73ba8)), closes [#28](https://github.com/ashishsingh4u/sing-bus/issues/28)
+* **Settings:** Theme and Language switcher added ([1531d14](https://github.com/ashishsingh4u/sing-bus/commit/1531d14)), closes [#28](https://github.com/ashishsingh4u/sing-bus/issues/28)
+
+
+
 ## [0.5.2](https://github.com/ashishsingh4u/sing-bus/compare/v0.5.1...v0.5.2) (2019-03-12)
 
 
