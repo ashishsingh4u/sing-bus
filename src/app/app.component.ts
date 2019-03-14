@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import browser from 'browser-detect';
 import { Observable, of } from 'rxjs';
-
-import { TranslateService } from '@ngx-translate/core';
+import { Store, select } from '@ngrx/store';
 
 import { environment as env } from '@env/environment';
 import { routeAnimations } from '@app/core';
+
+import {
+  ActionSettingsChangeLanguage,
+  ActionSettingsChangeAnimationsPageDisabled,
+  selectEffectiveTheme,
+  selectSettingsLanguage,
+  selectSettingsStickyHeader,
+  State
+} from './settings';
 
 @Component({
   selector: 'sb-root',
@@ -40,19 +48,24 @@ export class AppComponent implements OnInit {
   language$: Observable<string>;
   theme$: Observable<string>;
 
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-  }
+  constructor(private store: Store<State>) {}
 
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
   }
 
   ngOnInit(): void {
-    this.isAuthenticated$ = of(false);
-    this.stickyHeader$ = of(false);
-    this.language$ = of('en');
-    this.theme$ = of('Dark');
+    if (AppComponent.isIEorEdgeOrSafari()) {
+      this.store.dispatch(
+        new ActionSettingsChangeAnimationsPageDisabled({
+          pageAnimationsDisabled: true
+        })
+      );
+    }
+
+    this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
+    this.language$ = this.store.pipe(select(selectSettingsLanguage));
+    this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
 
   onLoginClick() {}
@@ -60,6 +73,6 @@ export class AppComponent implements OnInit {
   onLogoutClick() {}
 
   onLanguageSelect({ value: language }) {
-    this.translate.use(language);
+    this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
   }
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StopsComponent } from './stops/stops.component';
 import { ArrivalsComponent } from './arrivals/arrivals.component';
-import { SettingsComponent } from './settings/component/settings.component';
+import { SettingsComponent } from './settings/components/settings.component';
 
 const routes: Routes = [
   {
