@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.1](https://github.com/ashishsingh4u/sing-bus/compare/v0.6.0...v0.6.1) (2019-03-16)
+
+
+### Bug Fixes
+
+* **Comments:** Commented code removed ([3e5a887](https://github.com/ashishsingh4u/sing-bus/commit/3e5a887))
+* **Settings:** Fixed page animation for safari ([ff62b5b](https://github.com/ashishsingh4u/sing-bus/commit/ff62b5b)), closes [#31](https://github.com/ashishsingh4u/sing-bus/issues/31)
+
+
+
 # [0.6.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.5.2...v0.6.0) (2019-03-14)
 
 
