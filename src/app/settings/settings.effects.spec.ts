@@ -39,7 +39,7 @@ describe('SettingsEffects', () => {
     store = jasmine.createSpyObj('store', ['pipe']);
   });
 
-  describe('updateTheme', () => {
+  describe('Setting effects', () => {
     it('should not dispatch any action', () => {
       const actions = new Actions<SettingsActions>();
       const effect = new SettingsEffects(
@@ -53,6 +53,9 @@ describe('SettingsEffects', () => {
       const metadata = getEffectsMetadata(effect);
 
       expect(metadata.updateTheme).toEqual({ dispatch: false });
+      expect(metadata.setPageAnimationStatus).toEqual({ dispatch: false });
+      expect(metadata.setTranslateServiceLanguage).toEqual({ dispatch: false });
+      expect(metadata.updateRouteAnimationType).toEqual({ dispatch: false });
     });
   });
 });
