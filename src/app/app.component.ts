@@ -4,15 +4,15 @@ import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
 import { environment as env } from '@env/environment';
-import { routeAnimations } from '@app/core';
+import { routeAnimations, AppState } from '@app/core';
 
 import {
   ActionSettingsChangeLanguage,
   ActionSettingsChangeAnimationsPageDisabled,
+  ActionSettingsChangeAnimationsPage,
   selectEffectiveTheme,
   selectSettingsLanguage,
-  selectSettingsStickyHeader,
-  State
+  selectSettingsStickyHeader
 } from './settings';
 
 @Component({
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
   language$: Observable<string>;
   theme$: Observable<string>;
 
-  constructor(private store: Store<State>) {}
+  constructor(private store: Store<AppState>) {}
 
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);

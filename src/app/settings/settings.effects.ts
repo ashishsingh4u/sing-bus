@@ -71,6 +71,24 @@ export class SettingsEffects {
   );
 
   @Effect({ dispatch: false })
+  setPageAnimationStatus = merge(
+    INIT,
+    this.actions$.pipe(
+      ofType(
+        SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED
+      )
+    )
+  ).pipe(
+    withLatestFrom(this.store.pipe(select(selectSettingsState))),
+    tap(([action, settings]) =>
+      this.animationsService.updateRouteAnimationType(
+        settings.pageAnimations,
+        settings.elementsAnimations
+      )
+    )
+  );
+
+  @Effect({ dispatch: false })
   updateTheme = merge(
     INIT,
     this.actions$.pipe(ofType(SettingsActionTypes.CHANGE_THEME))
