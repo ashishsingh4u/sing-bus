@@ -55,24 +55,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (AppComponent.isIEorEdgeOrSafari()) {
-    //   this.store.dispatch(
-    //     new ActionSettingsChangeAnimationsPageDisabled({
-    //       pageAnimationsDisabled: true
-    //     })
-    //   );
-    //   this.store.dispatch(
-    //     new ActionSettingsChangeAnimationsPage({
-    //       pageAnimations: false
-    //     })
-    //   );
-    // }
-
-    this.store.dispatch(
-      new ActionSettingsChangeAnimationsPageDisabled({
-        pageAnimationsDisabled: true
-      })
-    );
+    if (AppComponent.isIEorEdgeOrSafari()) {
+      this.store.dispatch(
+        new ActionSettingsChangeAnimationsPageDisabled({
+          pageAnimationsDisabled: true
+        })
+      );
+    }
 
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
