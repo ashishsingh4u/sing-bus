@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.7.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.6.3...v0.7.0) (2019-03-17)
+
+
+### Features
+
+* **About:** About page updated with link ([39f3de8](https://github.com/ashishsingh4u/sing-bus/commit/39f3de8))
+
+
+
 ## [0.6.3](https://github.com/ashishsingh4u/sing-bus/compare/v0.6.2...v0.6.3) (2019-03-16)
 
 
