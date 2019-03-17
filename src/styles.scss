@@ -17,9 +17,12 @@
 
 @import 'styles-reset.scss-theme';
 @import 'app/app.component.scss-theme';
+@import 'app/static/about/about.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
+  @include sb-styles-reset-theme($theme);
   @include sb-app-component-theme($theme);
+  @include sb-about-component-theme($theme);
 }
 
 .default-theme {

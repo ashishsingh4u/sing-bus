@@ -23,5 +23,8 @@
   "sb.settings.animations.title": "Animations",
   "sb.settings.animations.page": "Navigation whole page transition",
   "sb.settings.animations.elements": "Navigation page elements slide up",
-  "sb.settings.title": "Settings"
+  "sb.settings.title": "Settings",
+  "sb.about.change-theme": "Change theme",
+  "sb.about.check-blogs" : "Check some related blogs",
+  "sb.about.get-started" : "GET STARTED"
 }
