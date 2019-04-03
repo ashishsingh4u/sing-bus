@@ -5,6 +5,7 @@
 * Use command below to build the image
 
         $ docker-compose -f docker-compose.yaml build
+
 * Run the application in de-attached mode
 
         $ docker-compose up -d
@@ -58,6 +59,10 @@
         - all dangling images
         - all dangling build cache
         Are you sure you want to continue? [y/N]
+
+* Remove dangling images
+
+        $ docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 
 * Remove all stopped containers and unused images
 

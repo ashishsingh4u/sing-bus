@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sing-bus-svc
+  labels:
+    app: sing-bus
+spec:
+  # type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: sing-bus
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sing-bus
+  labels:
+    app: sing-bus
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sing-bus
+  template:
+    metadata:
+      labels:
+        app: sing-bus
+    spec:
+      containers:
+      - name: sing-bus
+      # image: sing-bus:<tag>
+        image: ashishsingh4u/sing-bus
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
