@@ -46,7 +46,7 @@ kube-controller-manager-docker-for-desktop   1/1       Running   0          10d
 kube-dns-86f4d74b45-vxz65                    3/3       Running   0          10d
 kube-proxy-dpkls                             1/1       Running   0          10d
 kube-scheduler-docker-for-desktop            1/1       Running   0          10d
-**kubernetes-dashboard-669f9bbd46-jrvf4        1/1       Running   0          10m**
+kubernetes-dashboard-669f9bbd46-jrvf4        1/1       Running   0          10m
 ```
 
 ## Port forwarding to access dashboard
@@ -54,7 +54,7 @@ kube-scheduler-docker-for-desktop            1/1       Running   0          10d
 ```bash
 $ kubectl port-forward kubernetes-dashboard-669f9bbd46-jrvf4 8443:8443 --namespace=kube-system
 Launch dashboard at http://localhost:8443
-**OR**
+OR
 $ kubectl proxy
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/.
 ```
@@ -95,7 +95,6 @@ Use this token to login into Kubernetes dashboard
 ## Run sample nginx pod to test Kubernetes
 
 ```bash
-
 Create and run nginx pod (Deployment):
 $ kubectl run hello-nginx --image=nginx --port=80
 
@@ -169,14 +168,14 @@ $ kubectl port-forward rs/hello-nginx-6f9f4fc7dd 31952:31952
 or
 $ kubectl port-forward svc/hello-nginx 31952:80
 
-Test forwarded port
+Test forwarded port:
 curl localhost:3195
 
-Create deployment with yaml configration
+Create deployment with yaml configuration:
 $ kubectl apply -f singbus-deployment.yaml --record
-Forward port after deployment
+Forward port after deployment:
 $ kubectl port-forward svc/hello-nginx-svc 8080:8080
-Delete both deployment and service once done with development
+Delete both deployment and service once done with development:
 $ kubectl delete deploy/hello-nginx svc/hello-nginx-svc
 ```
 

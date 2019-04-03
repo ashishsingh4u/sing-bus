@@ -3,9 +3,9 @@
 mode=$1
 if [[ "${mode}" == "RUN" ]]; then
     kubectl apply -f singbus-deployment.yaml --record
-    kubectl port-forward svc/hello-nginx-svc 8080:8080
+    kubectl port-forward svc/sing-bus-svc 8080:8080
 elif [[ "${mode}" == "DELETE" ]]; then
-    kubectl delete deploy/hello-nginx svc/hello-nginx-svc
+    kubectl delete deploy/sing-bus svc/sing-bus-svc
 else
     echo "Only RUN & DELETE modes are supported"
 fi
