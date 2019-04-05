@@ -12,6 +12,7 @@ import { CoreModule } from '@app/core';
 import { By } from '@angular/platform-browser';
 import { SharedModule } from './shared';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { of } from 'rxjs';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -37,6 +38,7 @@ describe('AppComponent', () => {
   function setup() {
     const fixture = TestBed.createComponent(AppComponent);
     const app: AppComponent = fixture.debugElement.componentInstance;
+    app.ngOnInit();
     return { fixture, app };
   }
 
