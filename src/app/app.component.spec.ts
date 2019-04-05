@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -8,11 +8,18 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { CoreModule } from '@app/core';
+import { CoreModule, AppState } from '@app/core';
 import { By } from '@angular/platform-browser';
 import { SharedModule } from './shared';
+import { of } from 'rxjs';
+import { Action, Store, StoreModule } from '@ngrx/store';
+import { provideMockStore, MockStore } from '@testing/utils';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
+  let store: MockStore<any>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -27,46 +34,85 @@ describe('AppComponent', () => {
             useFactory: HttpLoaderFactory,
             deps: [HttpClient]
           }
-        })
+        }),
+        StoreModule.forRoot({})
       ],
+      providers: [provideMockStore()],
       declarations: [AppComponent]
     }).compileComponents();
   }));
 
-  function setup() {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    return { fixture, app };
-  }
+  beforeEach(async(() => {
+    store = TestBed.get(Store);
+    store.setState({
+      settings: {
+        theme: 'DEFAULT-THEME',
+        autoNightMode: true,
+        stickyHeader: true,
+        pageAnimations: true,
+        pageAnimationsDisabled: false,
+        elementsAnimations: true,
+        language: 'en'
+      }
+    });
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
+  }));
 
   function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
   }
 
   it('should create the app', () => {
-    const { app } = setup();
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'Sing-Bus'`, () => {
-    const { app } = setup();
     expect(app.title).toEqual('Sing-Bus');
   });
 
-  it('should call login and logout methods', () => {
-    const { app, fixture } = setup();
-    fixture.detectChanges();
-    let el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
-    el.click();
+  it('should call onLoginClick method', async(() => {
+    fixture.whenStable().then(() => {
+      app.onLoginClick();
+      fixture.detectChanges();
+      expect(app.isAuthenticated$).toBeTruthy();
+      app.isAuthenticated$.subscribe(data => expect(data).toEqual(true));
+    });
+  }));
 
-    fixture.detectChanges();
-    el = fixture.debugElement.query(By.css('#btnLoggedIn')).nativeElement;
-    el.click();
+  it('should call onLogoutClick method', async(() => {
+    fixture.whenStable().then(() => {
+      app.onLogoutClick();
+      fixture.detectChanges();
+      expect(app.isAuthenticated$).toBeTruthy();
+      app.isAuthenticated$.subscribe(data => expect(data).toEqual(false));
+    });
+  }));
 
-    fixture.detectChanges();
-    spyOn(app, 'onLogoutClick');
-    el = fixture.debugElement.query(By.css('#btnLogout')).nativeElement;
-    el.click();
-    expect(app.onLogoutClick).toHaveBeenCalledTimes(1);
-  });
+  it('should click login method', async(() => {
+    fixture.whenStable().then(() => {
+      spyOn(app, 'onLoginClick');
+      const el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
+      el.click();
+      fixture.detectChanges();
+      expect(app.onLoginClick).toHaveBeenCalledTimes(1);
+    });
+  }));
+
+  it('should click logout method', async(() => {
+    fixture.whenStable().then(() => {
+      let el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
+      el.click();
+      fixture.detectChanges();
+      el = fixture.debugElement.query(By.css('#btnLoggedIn')).nativeElement;
+      el.click();
+
+      spyOn(app, 'onLogoutClick');
+      el = fixture.debugElement.query(By.css('#btnLogout')).nativeElement;
+      el.click();
+      fixture.detectChanges();
+      expect(app.onLogoutClick).toHaveBeenCalledTimes(1);
+    });
+  }));
 });
