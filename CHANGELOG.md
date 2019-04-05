@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.9.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.8.0...v0.9.0) (2019-04-05)
+
+
+### Bug Fixes
+
+* **Tests:** Test fixed ([#43](https://github.com/ashishsingh4u/sing-bus/issues/43)) ([10754fd](https://github.com/ashishsingh4u/sing-bus/commit/10754fd))
+
+
+### Features
+
+* **Test:** Tests added and updated ([#42](https://github.com/ashishsingh4u/sing-bus/issues/42)) ([0359d6c](https://github.com/ashishsingh4u/sing-bus/commit/0359d6c))
+
+
+
 # [0.8.0](https://github.com/ashishsingh4u/sing-bus/compare/v0.7.0...v0.8.0) (2019-03-23)
 
 
