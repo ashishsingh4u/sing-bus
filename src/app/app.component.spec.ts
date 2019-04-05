@@ -53,16 +53,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Sing-Bus');
   });
 
-  it(`should call onLoginClick`, () => {
-    const { app, fixture } = setup();
-    fixture.detectChanges();
-    spyOn(app, 'onLoginClick');
-    const el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
-    el.click();
-    expect(app.onLoginClick).toHaveBeenCalledTimes(1);
-  });
-
-  it('should call onLogoutClick', () => {
+  it('should call login and logout methods', () => {
     const { app, fixture } = setup();
     fixture.detectChanges();
     let el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
