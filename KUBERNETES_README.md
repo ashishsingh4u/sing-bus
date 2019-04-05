@@ -14,7 +14,7 @@ Find complete steps at:
 https://docs.docker.com/v17.12/docker-for-mac/
 ```
 
-## Test Kubernetes installtion
+## Test Kubernetes installation
 
 ```bash
 $ kubectl version
@@ -92,41 +92,41 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2V
 Use this token to login into Kubernetes dashboard
 ```
 
-## Run sample nginx pod to test Kubernetes
+## Run sample sing-bus pod to test Kubernetes
 
 ```bash
-Create and run nginx pod (Deployment):
-$ kubectl run hello-nginx --image=nginx --port=80
+Create and run sing-bus pod (Deployment):
+$ kubectl run sing-bus --image=ashishsingh4u/sing-bus --port=80
 
 Get pod details:
 $ kubectl get pods
 NAME                           READY     STATUS    RESTARTS   AGE
-hello-nginx-6f9f4fc7dd-2cpr9   1/1       Running   0          2m
+sing-bus-6f9f4fc7dd-2cpr9   1/1       Running   0          2m
 
 Get pod description:
-$ kubectl describe pod hello-nginx-6f9f4fc7dd-2cpr9
+$ kubectl describe pod sing-bus-6f9f4fc7dd-2cpr9
 
 Get deployment details:
 $ kubectl get deployments
 NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-hello-nginx   1         1         1            1           4m
+sing-bus   1         1         1            1           4m
 
 Expose deployment as service (Node Port):
-$ kubectl expose deployment hello-nginx --type=NodePort
+$ kubectl expose deployment sing-bus --type=NodePort
 OR as Container Port
-$ kubectl expose deployment hello-nginx --port=80
+$ kubectl expose deployment sing-bus --port=80
 
 Get running service details:
 $ kubectl get services
 NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
-hello-nginx   NodePort    10.103.74.58   <none>        80:32033/TCP   31s
+sing-bus   NodePort    10.103.74.58   <none>        80:32033/TCP   31s
 kubernetes    ClusterIP   10.96.0.1      <none>        443/TCP        10d
 
 Get service details:
-$ kubectl describe service hello-nginx
+$ kubectl describe service sing-bus
 
 Replicate service:
-$ kubectl scale --replicas=3 deployment/hello-nginx
+$ kubectl scale --replicas=3 deployment/sing-bus
 
 Get node details:
 $ kubectl get nodes
@@ -134,39 +134,39 @@ NAME                 STATUS    ROLES     AGE       VERSION
 docker-for-desktop   Ready     master    10d       v1.10.11
 
 Get pod port details:
-$ kubectl get pods -l run=hello-nginx -o yaml | grep podIP
+$ kubectl get pods -l run=sing-bus -o yaml | grep podIP
 
 Get details for given service:
-$ kubectl get svc hello-nginx
+$ kubectl get svc sing-bus
 
 Describe service:
-$ kubectl describe svc hello-nginx
+$ kubectl describe svc sing-bus
 
 Get endpoint details:
-$ kubectl get ep hello-nginx
+$ kubectl get ep sing-bus
 
 Delete specific service:
-$ kubectl delete service hello-nginx
+$ kubectl delete service sing-bus
 
 Delete specific deployment:
-$ kubectl delete deployment hello-nginx
+$ kubectl delete deployment sing-bus
 
 Get replica-set details:
 $ kubectl get rs
 
 Get container port details:
-$ kubectl get pods hello-nginx-6f9f4fc7dd-cgqvs --template='{{(index (index .spec.containers 0).ports 0).containerPort}}{{"\n"}}'
+$ kubectl get pods sing-bus-6f9f4fc7dd-cgqvs --template='{{(index (index .spec.containers 0).ports 0).containerPort}}{{"\n"}}'
 
 Different ways to forward port:
-$ kubectl port-forward hello-nginx-6f9f4fc7dd-cgqvs 31952:31952
+$ kubectl port-forward sing-bus-6f9f4fc7dd-cgqvs 31952:31952
 which is the same as
-$ kubectl port-forward pods/hello-nginx-6f9f4fc7dd-cgqvs 31952:31952
+$ kubectl port-forward pods/sing-bus-6f9f4fc7dd-cgqvs 31952:31952
 or
-$ kubectl port-forward deployment/hello-nginx 31952:31952
+$ kubectl port-forward deployment/sing-bus 31952:31952
 or
-$ kubectl port-forward rs/hello-nginx-6f9f4fc7dd 31952:31952
+$ kubectl port-forward rs/sing-bus-6f9f4fc7dd 31952:31952
 or
-$ kubectl port-forward svc/hello-nginx 31952:80
+$ kubectl port-forward svc/sing-bus 31952:80
 
 Test forwarded port:
 curl localhost:3195
@@ -174,9 +174,9 @@ curl localhost:3195
 Create deployment with yaml configuration:
 $ kubectl apply -f singbus-deployment.yaml --record
 Forward port after deployment:
-$ kubectl port-forward svc/hello-nginx-svc 8080:8080
+$ kubectl port-forward svc/sing-bus-svc 8080:8080
 Delete both deployment and service once done with development:
-$ kubectl delete deploy/hello-nginx svc/hello-nginx-svc
+$ kubectl delete deploy/sing-bus svc/sing-bus-svc
 ```
 
 ## References
