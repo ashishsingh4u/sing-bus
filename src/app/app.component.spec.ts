@@ -2,58 +2,23 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatInputModule } from '@angular/material/input';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatDividerModule } from '@angular/material/divider';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { CoreModule } from '@app/core';
+import { By } from '@angular/platform-browser';
+import { SharedModule } from './shared';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        FormsModule,
+        SharedModule,
         BrowserAnimationsModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatSelectModule,
-        MatTabsModule,
-        MatInputModule,
-        MatProgressSpinnerModule,
-        MatChipsModule,
-        MatCardModule,
-        MatSidenavModule,
-        MatCheckboxModule,
-        MatListModule,
-        MatMenuModule,
-        MatIconModule,
-        MatTooltipModule,
-        MatSnackBarModule,
-        MatSlideToggleModule,
-        MatDividerModule,
-        FontAwesomeModule,
         CoreModule,
         HttpClientModule,
         TranslateModule.forRoot({
@@ -64,25 +29,53 @@ describe('AppComponent', () => {
           }
         })
       ],
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent]
     }).compileComponents();
   }));
+
+  function setup() {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    return { fixture, app };
+  }
 
   function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
   }
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const { app } = setup();
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'Sing-Bus'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const { app } = setup();
     expect(app.title).toEqual('Sing-Bus');
+  });
+
+  it(`should call onLoginClick`, () => {
+    const { app, fixture } = setup();
+    fixture.detectChanges();
+    spyOn(app, 'onLoginClick');
+    const el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
+    el.click();
+    expect(app.onLoginClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call onLogoutClick', () => {
+    const { app, fixture } = setup();
+    fixture.detectChanges();
+    let el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
+    el.click();
+
+    fixture.detectChanges();
+    el = fixture.debugElement.query(By.css('#btnLoggedIn')).nativeElement;
+    el.click();
+
+    fixture.detectChanges();
+    spyOn(app, 'onLogoutClick');
+    el = fixture.debugElement.query(By.css('#btnLogout')).nativeElement;
+    el.click();
+    expect(app.onLogoutClick).toHaveBeenCalledTimes(1);
   });
 });

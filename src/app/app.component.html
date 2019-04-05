@@ -39,16 +39,16 @@
             </button>
           </span>
 
-          <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)"
+          <button id="btnLogin" mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)"
             (click)="onLoginClick()">
             {{ 'sb.menu.login' | translate }}
           </button>
 
-          <button *ngIf="(isAuthenticated$ | async)" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
+          <button id="btnLoggedIn" *ngIf="(isAuthenticated$ | async)" mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
             <fa-icon icon="user-circle"></fa-icon>
           </button>
-          <mat-menu #toolbarUserMenu="matMenu">
-            <button mat-menu-item (click)="onLogoutClick()">
+          <mat-menu id="matLogout" #toolbarUserMenu="matMenu">
+            <button id="btnLogout" mat-menu-item (click)="onLogoutClick()">
               <mat-icon>
                 <fa-icon icon="power-off"></fa-icon>
               </mat-icon>

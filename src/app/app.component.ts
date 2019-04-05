@@ -68,9 +68,13 @@ export class AppComponent implements OnInit {
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
 
-  onLoginClick() {}
+  onLoginClick() {
+    this.isAuthenticated$ = of(true);
+  }
 
-  onLogoutClick() {}
+  onLogoutClick() {
+    this.isAuthenticated$ = of(false);
+  }
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
