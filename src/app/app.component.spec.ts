@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CoreModule } from '@app/core';
 import { By } from '@angular/platform-browser';
 import { SharedModule } from './shared';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -35,7 +36,7 @@ describe('AppComponent', () => {
 
   function setup() {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app: AppComponent = fixture.debugElement.componentInstance;
     return { fixture, app };
   }
 
@@ -53,20 +54,23 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Sing-Bus');
   });
 
-  it('should call login and logout methods', () => {
+  it('should call onLoginClick method', () => {
     const { app, fixture } = setup();
-    fixture.detectChanges();
-    let el = fixture.debugElement.query(By.css('#btnLogin')).nativeElement;
-    el.click();
 
+    expect(app.isAuthenticated$).toBeFalsy();
+    app.onLoginClick();
     fixture.detectChanges();
-    el = fixture.debugElement.query(By.css('#btnLoggedIn')).nativeElement;
-    el.click();
+    expect(app.isAuthenticated$).toBeTruthy();
+    app.isAuthenticated$.subscribe(data => expect(data).toEqual(true));
+  });
 
+  it('should call onLogoutClick method', () => {
+    const { app, fixture } = setup();
+
+    expect(app.isAuthenticated$).toBeFalsy();
+    app.onLogoutClick();
     fixture.detectChanges();
-    spyOn(app, 'onLogoutClick');
-    el = fixture.debugElement.query(By.css('#btnLogout')).nativeElement;
-    el.click();
-    expect(app.onLogoutClick).toHaveBeenCalledTimes(1);
+    expect(app.isAuthenticated$).toBeTruthy();
+    app.isAuthenticated$.subscribe(data => expect(data).toEqual(false));
   });
 });
