@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../assets/logo.png');
-  languages = ['en', 'fr', 'hi-in'];
+  languages = ['en', 'fr', 'hi'];
 
   navigation = [
     { link: 'about', label: 'sb.menu.about' },

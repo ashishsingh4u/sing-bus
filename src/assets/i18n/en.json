@@ -5,6 +5,7 @@
   "sb.menu.login": "Sign in",
   "sb.menu.logout": "Logout",
   "sb.menu.settings": "Settings",
+  "sb.menu.github": "Github",
   "sb.title.long": "Singapore Bus",
   "sb.title.short": "Sing-Bus",
   "sb.settings.general.title": "General",
@@ -15,7 +16,7 @@
   "sb.settings.themes.night-mode": "Auto night mode (from 21:00 to 7:00)",
   "sb.settings.general.language.en": "English",
   "sb.settings.general.language.fr": "French",
-  "sb.settings.general.language.hi-in": "Hindi",
+  "sb.settings.general.language.hi": "Hindi",
   "sb.settings.general.placeholder": "Language",
   "sb.settings.themes.sticky-header": "Sticky header",
   "sb.settings.themes.title": "Themes",
@@ -26,5 +27,7 @@
   "sb.settings.title": "Settings",
   "sb.about.change-theme": "Change theme",
   "sb.about.check-blogs" : "Check some related blogs",
-  "sb.about.get-started" : "GET STARTED"
+  "sb.about.get-started" : "GET STARTED",
+  "sb.stops.coming-soon" : "Bus stops coming soon!",
+  "sb.arrivals.coming-soon" : "Bus arrivals coming soon!"
 }
