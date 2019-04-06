@@ -34,7 +34,7 @@ export class SettingsComponent implements OnInit {
   languages = [
     { value: 'en', label: 'en' },
     { value: 'fr', label: 'fr' },
-    { value: 'hi-in', label: 'hi-in' }
+    { value: 'hi', label: 'hi' }
   ];
 
   constructor(private store: Store<State>) {}
