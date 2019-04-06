@@ -18,11 +18,11 @@ assignees: ''
 
 -->
 
-# Describe the feature you'd like :-
+# Describe the feature you'd like:-
 
-## Other information :-
+## Other information:-
 
-## I would be willing to submit a PR to fix this issue :-
+## I would be willing to submit a PR to fix this issue:-
 
 - [ ] Yes (Assistance is provided if you need help submitting a pull request)  
 - [ ] No
