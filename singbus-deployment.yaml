@@ -34,7 +34,7 @@ spec:
       containers:
       - name: sing-bus
       # image: sing-bus:<tag>
-        image: ashishsingh4u/sing-bus
+        image: ashishsingh4u/sing-bus:latest
         resources:
           requests:
             memory: "64Mi"

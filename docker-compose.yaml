@@ -4,6 +4,6 @@ services:
     container_name: sing-bus
     restart: always
     build: .
-    image: ashishsingh4u/sing-bus
+    image: sing-bus
     ports:
       - '80:80'
