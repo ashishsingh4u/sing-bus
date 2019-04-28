@@ -5,10 +5,11 @@ metadata:
   labels:
     app: sing-bus
 spec:
-  # type: NodePort
+  type: NodePort
   ports:
   - port: 8080
     targetPort: 80
+    nodePort: 30000
     protocol: TCP
     name: http
   selector:
