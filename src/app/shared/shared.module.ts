@@ -21,9 +21,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import {
   faBars,
@@ -59,37 +57,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import { NgModule } from '@angular/core';
-
-library.add(
-  faBars,
-  faUserCircle,
-  faPowerOff,
-  faCog,
-  faRocket,
-  faPlayCircle,
-  faGithub,
-  faMediumM,
-  faTwitter,
-  faInstagram,
-  faYoutube,
-  faPlus,
-  faEdit,
-  faTrash,
-  faTimes,
-  faCaretUp,
-  faCaretDown,
-  faExclamationTriangle,
-  faFilter,
-  faTasks,
-  faCheck,
-  faSquare,
-  faLanguage,
-  faPaintBrush,
-  faLightbulb,
-  faWindowMaximize,
-  faStream,
-  faBook
-);
 
 @NgModule({
   imports: [
@@ -148,4 +115,37 @@ library.add(
     FontAwesomeModule
   ]
 })
-export class SharedModule {}
+export class SharedModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faBars,
+      faUserCircle,
+      faPowerOff,
+      faCog,
+      faRocket,
+      faPlayCircle,
+      faGithub,
+      faMediumM,
+      faTwitter,
+      faInstagram,
+      faYoutube,
+      faPlus,
+      faEdit,
+      faTrash,
+      faTimes,
+      faCaretUp,
+      faCaretDown,
+      faExclamationTriangle,
+      faFilter,
+      faTasks,
+      faCheck,
+      faSquare,
+      faLanguage,
+      faPaintBrush,
+      faLightbulb,
+      faWindowMaximize,
+      faStream,
+      faBook
+    );
+  }
+}
